@@ -76,3 +76,22 @@ function tambahData(tambah) {
     }
     tambah.forEach(t => t.value = "");
 }
+
+
+
+const x = window.matchMedia("(max-width: 600px)");
+
+
+function mobile(x) {
+    if (x.matches) {
+        const div = document.createElement('div');
+        div.innerHTML = `<img width="400" class="rounded mx-auto d-block" src="img/eror.jpg">
+                        <h1 class="text-center" >Mobile Version on Going !</h1>`;
+        document.querySelector('.global').style.display = "none";
+        document.body.appendChild(div);
+    } else {
+        document.querySelector('.global').style.display = "block"
+    }
+}
+
+mobile(x);
