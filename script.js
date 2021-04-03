@@ -12,6 +12,7 @@ btnTambah.addEventListener('click', () => {
     btnHapus.forEach(btn => {
         btn.addEventListener('click', () => {
             Swal.fire({
+                width: 400,
                 title: 'Apakah anda yakin ?',
                 text: "Anda akan menghapus Tugas ini !",
                 icon: 'warning',
@@ -24,11 +25,12 @@ btnTambah.addEventListener('click', () => {
                     const parent = btn.parentElement.parentElement;
                     // Hapus Data Tugas
                     parent.remove();
-                    Swal.fire(
-                        'Terhapus!',
-                        'Tugas anda sudah terhapus.',
-                        'success'
-                    )
+                    Swal.fire({
+                        width: 400,
+                        title: 'Terhapus!',
+                        text: 'Tugas anda sudah terhapus.',
+                        icon: 'success',
+                    })
                 }
             })
         })
@@ -68,6 +70,7 @@ function tambahData(tambah) {
             icon: 'error',
             title: 'Oops...',
             text: 'Isikan data terlebih dahulu !',
+            width: 400,
             // footer: '<a href>Why do I have this issue?</a>'
         })
     }
